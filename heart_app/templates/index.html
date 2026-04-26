@@ -39,7 +39,6 @@ h2 {
     text-align: center;
 }
 
-/* 🔥 الفورم */
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -51,23 +50,18 @@ h2 {
     flex-direction: column;
 }
 
-/* 🔥 LABEL واضح */
 label {
     font-weight: bold;
     margin-bottom: 5px;
     color: #333;
-    font-size: 14px;
 }
 
-/* 🔥 INPUT */
 input, select {
     padding: 10px;
     border-radius: 8px;
     border: 1px solid #ccc;
-    font-size: 14px;
 }
 
-/* 🔥 BUTTON */
 button {
     width: 100%;
     padding: 12px;
@@ -79,7 +73,6 @@ button {
     cursor: pointer;
 }
 
-/* 🔥 BARS */
 .bar {
     height: 10px;
     border-radius: 5px;
@@ -89,7 +82,6 @@ button {
 .green { background: green; }
 .red { background: red; }
 
-/* 🔥 CARDS */
 .cards {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -105,7 +97,15 @@ button {
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* 📱 موبايل */
+.ai-box {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.analysis { background: #eef; }
+.advice { background: #efe; }
+
 @media(max-width:800px){
     .main { grid-template-columns: 1fr; }
 }
@@ -116,18 +116,13 @@ button {
 <body>
 
 <div class="overlay">
-
 <div class="container">
-
 <div class="main">
 
-<!-- LEFT -->
 <div class="left">
-
 <h2>🩺 Input Data</h2>
 
 <form action="/predict" method="post">
-
 <div class="grid">
 
 <div>
@@ -229,12 +224,9 @@ button {
 </div>
 
 <button type="submit">🔍 Predict</button>
-
 </form>
-
 </div>
 
-<!-- RIGHT -->
 <div class="right">
 
 <h2>📊 Result Dashboard</h2>
@@ -262,12 +254,9 @@ button {
 <div class="card">
 <h3>⚠️ Level</h3>
 <p>
-{% if disease|float > 70 %}
-High
-{% elif disease|float > 40 %}
-Medium
-{% else %}
-Low
+{% if disease|float > 70 %} High
+{% elif disease|float > 40 %} Medium
+{% else %} Low
 {% endif %}
 </p>
 </div>
@@ -283,14 +272,34 @@ Low
 
 </div>
 
+{% if analysis %}
+<div class="ai-box analysis">
+<h3>🧠 Smart Analysis</h3>
+<ul>
+{% for item in analysis %}
+<li>{{ item }}</li>
+{% endfor %}
+</ul>
+</div>
+{% endif %}
+
+{% if advice %}
+<div class="ai-box advice">
+<h3>💡 Recommendations</h3>
+<ul>
+{% for a in advice %}
+<li>{{ a }}</li>
+{% endfor %}
+</ul>
+</div>
+{% endif %}
+
 {% endif %}
 
 </div>
 
 </div>
-
 </div>
-
 </div>
 
 </body>
