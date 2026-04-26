@@ -1,4 +1,4 @@
-# Heart Disease Prediction System
+<img width="1899" height="1074" alt="image" src="https://github.com/user-attachments/assets/1d3ce409-11c0-495c-bddc-ae85b990c770" /># Heart Disease Prediction System
 
 A machine learning web application that predicts the likelihood of heart disease based on clinical patient data.
 
@@ -103,7 +103,8 @@ http://127.0.0.1:5000
 
 ## Screenshot
 
-![App Screenshot](screenshot.png)
+<img width="1899" height="1074" alt="image" src="https://github.com/user-attachments/assets/4be4f055-6062-4c60-9995-08c0c686b83e" />
+
 
 ---
 
