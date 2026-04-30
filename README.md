@@ -23,8 +23,6 @@ The system allows users to input medical data and receive:
 
 * Random Forest (best performing)
 * TabNet
-* KNN
-* Decision Tree
 
 Random Forest achieved the best performance.
 
@@ -32,8 +30,8 @@ Random Forest achieved the best performance.
 
 ## Model Performance
 
-* Accuracy: ~82–85%
-* Cross-validation score: ~0.82
+* Accuracy: 98%
+* Cross-validation score: ~0.98
 * Evaluation Metrics:
 
   * Accuracy
